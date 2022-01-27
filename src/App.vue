@@ -5,7 +5,7 @@
       <button
         v-for="(link, index) in links"
         :key="index"
-        class="btn btn-outline-warning border-3 mx-2"
+        class="btn btn-outline-warning border-3 m-1"
         @click="filteredMenu(link)"
       >
         {{ link }}
@@ -14,14 +14,14 @@
     <section class="row">
       <article
         v-for="item in currentMenu"
-        class="row col-lg-6 g-0 border my-2"
+        class="row col-lg-6 g-0 my-2"
         :key="item.id"
       >
         <img :src="item.img" :alt="item.title" class="col-md-6" />
-        <div class="row col-md-6 g-0 p-2">
+        <div class="row col-md-6 g-0 px-3 py-1">
           <div class="d-flex justify-content-between">
             <h5>{{ item.title }}</h5>
-            <p>${{ item.price }}</p>
+            <p class="price">${{ item.price }}</p>
           </div>
           <p>{{ item.desc }}</p>
         </div>
@@ -67,3 +67,23 @@ export default {
   },
 };
 </script>
+
+<style>
+button {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+
+h5 {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+}
+.price {
+  letter-spacing: 3px;
+}
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 160px;
+}
+</style>
